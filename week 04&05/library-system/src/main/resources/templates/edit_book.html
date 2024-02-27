@@ -1,0 +1,19 @@
+<!-- src/main/resources/templates/book/edit.html -->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Library - Edit Book</title>
+</head>
+<body>
+<h2>Edit Book</h2>
+<form th:object="${book}" th:action="@{/books/{id}/edit(id=${book.id})}" method="post">
+  <label>Title: <input type="text" th:field="*{title}" /></label><br/>
+  <label>Description: <input type="text" th:field="*{description}" /></label><br/>
+  <label>Year: <input type="text" th:field="*{year}" /></label><br/>
+  <label>Author: <input type="text" th:field="*{author}" /></label><br/>
+  <input type="submit" value="Save"/>
+</form>
+<a th:href="@{/books}">Cancel</a>
+</body>
+</html>
